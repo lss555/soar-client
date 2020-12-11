@@ -35,13 +35,13 @@ const Footer = ({ user }) => (
           <Link className='navbar-item' to="/">Home</Link>
         </section>
         <section>
+          <Link to='/blog' className='navbar-item'>Blog</Link>
+        </section>
+        <section>
           <Link to='/about' className='navbar-item'>About</Link>
         </section>
         <section>
-          <Link to='/allprojects' className='navbar-item'>All Projects</Link>
-        </section>
-        <section>
-          <Link to='/resume' className='navbar-item'>Resume</Link>
+          <Link to='/faq' className='navbar-item'>FAQ</Link>
         </section>
         <section>
           <Link to='/contact' className='navbar-item'>Contact</Link>

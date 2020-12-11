@@ -10,6 +10,8 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import Footer from './components/Footer/Footer'
+import Home from './components/Home/Home'
+import Admin from './components/Admin/Admin'
 
 class App extends Component {
   constructor () {
@@ -53,6 +55,12 @@ class App extends Component {
             deleteAlert={this.deleteAlert}
           />
         ))}
+        <Route exact path='/' render={() => (
+          <Home msgAlert={this.msgAlert} setUser={this.setUser} />
+        )} />
+        <AuthenticatedRoute exact path='/admin' render={() => (
+          <Admin msgAlert={this.msgAlert} setUser={this.setUser} />
+        )} />
         <main className="container">
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
