@@ -4,11 +4,10 @@ import './Blog.scss'
 // import axios from 'axios'
 
 import placeholder from './placeholder.jpg'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import {
-  Card, CardText, CardBody,
-  CardTitle, CardSubtitle, Row, Col
+  Row, Col
 } from 'reactstrap'
 import { indexSpots } from './index.js'
 
@@ -28,27 +27,19 @@ class Blog extends Component {
 
   render (props) {
     const blogs = this.state.blogs.map(blog => (
-      <Col sm='4' key={blog.id}>
+      <Col sm='12' key={blog.id} className='blog-col'>
         <div className='card-div'>
-          <Card className="text-white spots-card" body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
-            <CardBody>
-              <CardTitle>{blog.title}</CardTitle>
-              <CardSubtitle>sub title</CardSubtitle>
-            </CardBody>
-            <img width="100%" src={placeholder} alt="Card image cap" />
-            <CardBody>
-              <CardText>{blog.text}</CardText>
-              <Link to={`/spots/${blog.id}/`}>More on this spot</Link>
-            </CardBody>
-          </Card>
+          <img src={placeholder} alt="Card image cap" className='blog-img-left'/>
+          <h2>{blog.title}</h2>
+          <p>Published on {blog.date}</p>
+          <p>{blog.text}</p>
         </div>
       </Col>
     ))
 
     return (
       <div key={this.state.blogs.id}>
-        <h1 className='blog-header'>Blog</h1>
-        <h3 className='blog-header'>{this.props.location.state ? this.props.location.state.message : null}</h3>
+        <h1 className='blog-header'>Soar Blog</h1>
         <Row>
           {blogs}
         </Row>
