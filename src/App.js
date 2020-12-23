@@ -12,6 +12,7 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import Footer from './components/Footer/Footer'
 import Home from './components/Home/Home'
 import Admin from './components/Admin/Admin'
+import Blog from './components/blog/Blog'
 
 class App extends Component {
   constructor () {
@@ -73,6 +74,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+          <Route exact path='/blog' render={() => (
+            <Blog msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
         </main>
         <Footer />
