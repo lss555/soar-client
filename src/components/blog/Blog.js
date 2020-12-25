@@ -3,7 +3,7 @@ import './Blog.scss'
 // import apiUrl from '../../apiConfig'
 // import axios from 'axios'
 
-import placeholder from './placeholder.jpg'
+// import placeholder from './placeholder.jpg'
 // import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import {
@@ -29,7 +29,7 @@ class Blog extends Component {
     const blogs = this.state.blogs.map(blog => (
       <Col sm='12' key={blog.id} className='blog-col'>
         <div className='card-div'>
-          <img src={placeholder} alt="Card image cap" className='blog-img-left'/>
+          <img src={blog.image} alt="Blog image" className='blog-img-left'/>
           <h2>{blog.title}</h2>
           <p>Published on {blog.date}</p>
           <p>{blog.text}</p>
