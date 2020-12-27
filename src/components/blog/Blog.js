@@ -29,7 +29,7 @@ class Blog extends Component {
     const blogs = this.state.blogs.map(blog => (
       <Col sm='12' key={blog.id} className='blog-col'>
         <div className='card-div'>
-          <img src={blog.image} alt="Blog image" className='blog-img-left'/>
+          <img width="100%" src={blog.image} alt="Blog image" className='blog-img-left'/>
           <h2>{blog.title}</h2>
           <p>Published on {blog.date}</p>
           <p>{blog.text}</p>
